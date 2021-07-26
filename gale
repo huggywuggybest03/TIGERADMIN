@@ -1,4 +1,3 @@
---//H17S3
 getgenv().Nullware_ReanimateConfiguration = {
     ["Netless"] = true,
     ["Anti-Fling"] = false,
@@ -23,6 +22,7 @@ meleeRemote = mainRemotes['meleeEvent']
 getgenv().NullwareAPI:GetObject("CloneChar", "Humanoid").Died:Connect(function()
     dead111 = true
 end)
+clickedf = false
 local mmm = game.Players.LocalPlayer:GetMouse()
 mmm.Button1Down:Connect(function()
     if dead111 == false then
@@ -35,9 +35,10 @@ mmm.Button1Down:Connect(function()
         end
     end
 end)
+ClickedR = false
 spawn(function()
     while wait() do
-        if clickedm == true and dead111 == false then
+        if clickedm == true and dead111 == false or ClickedR == true or clickedf == true then
             for i,v in pairs(game.Players:GetPlayers()) do
                 if v then
                     meleeRemote:FireServer(v)
@@ -108,11 +109,7 @@ if hrp:FindFirstChildOfClass("AlignOrientation") then
     hrp:FindFirstChildOfClass("AlignOrientation"):Destroy()
 end
 
-spawn(function()
-    while game:GetService("RunService").Heartbeat:Wait() do
-        bp.Position = game:GetService("Players").LocalPlayer.Character["NullwareReanim"].Torso.Position
-    end
-end)
+
 
 -------------------------------------------------------
 --Start Good Stuff--
@@ -1747,6 +1744,7 @@ end
 function Hyperkickcombo()
 
     attack = true
+    clickedf = true
     so("http://www.roblox.com/asset/?id=1452040709", RightLeg, 3, 1)
     WaveEffect(BrickColor.new("White"), root.CFrame * CFrame.new(0, -1, 0) * euler(0, math.random(-50, 50), 0), 1, 1, 1, 1, 0.5, 1, 0.05)
     for i = 0, 7.14, 0.1 do
@@ -1937,8 +1935,8 @@ function Hyperkickcombo()
     end
 
     attack = false
+    clickedf = false
     con5:disconnect()
-
 end
 
 
@@ -1948,7 +1946,7 @@ end
 local ultra = false
 
 function Galekicks()
-
+    ClickedR = true
     attack = true
     so("http://www.roblox.com/asset/?id=1452040709", RightLeg, 3, 1)
     for i = 0, 1.65, 0.1 do
@@ -1996,7 +1994,7 @@ function Galekicks()
                 end
             end
         end)
-
+        ClickedR = false
         for i = 0, .1, 0.2 do
             swait()
             BlockEffect(BrickColor.new("Lime green"), rl.CFrame*CF(0,-1,0), 2, 2, 2, 1.5, 1.5, 1.5, 0.03)
