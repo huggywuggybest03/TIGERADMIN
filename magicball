@@ -64,6 +64,7 @@ omghack.Name = math.random()
 omghack.Visible =true
 omghack.Parent = getgenv().NullwareAPI:GetObject("MainChar", "HumanoidRootPart")
 omghack.Adornee = getgenv().NullwareAPI:GetObject("MainChar", "HumanoidRootPart")
+repeat wait() until getgenv().NullwareAPI:GetObject("MainChar", "HumanoidRootPart")
 getgenv().NullwareAPI:GetObject("MainChar", "HumanoidRootPart").Transparency = 0.4
 wait(0.4)
 dead = false
