@@ -1,0 +1,99 @@
+--//H17S3 
+repeat wait() until game.Players.LocalPlayer.Character
+local ScreenGui = Instance.new("ScreenGui")
+local f2 = Instance.new("Frame")
+local f3 = Instance.new("Frame")
+local f4 = Instance.new("Frame")
+local f5 = Instance.new("Frame")
+local f1 = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+f2.Name = "f2"
+f2.Parent = ScreenGui
+f2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+f2.BorderSizePixel = 0
+f2.Position = UDim2.new(0, 0, 0.418940604, 0)
+f2.Size = UDim2.new(0, 100, 0, 100)
+
+f3.Name = "f3"
+f3.Parent = ScreenGui
+f3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+f3.BorderSizePixel = 0
+f3.Position = UDim2.new(0.935087025, 0, 0.418940604, 0)
+f3.Size = UDim2.new(0, 100, 0, 100)
+
+f4.Name = "f4"
+f4.Parent = ScreenGui
+f4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+f4.BorderSizePixel = 0
+f4.Position = UDim2.new(0.44638887, 0, 0, 0)
+f4.Size = UDim2.new(0, 100, 0, 100)
+
+f5.Name = "f5"
+f5.Parent = ScreenGui
+f5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+f5.BorderSizePixel = 0
+f5.Position = UDim2.new(0.44638887, 0, 0.860377729, 0)
+f5.Size = UDim2.new(0, 100, 0, 100)
+
+f1.Name = "f1"
+f1.Parent = ScreenGui
+f1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+f1.BorderSizePixel = 0
+f1.Position = UDim2.new(0.44638887, 0, 0.442617476, 0)
+f1.Size = UDim2.new(0, 100, 0, 100)
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.181112528, 0, 0.163723916, 0)
+TextLabel.Size = UDim2.new(0, 141, 0, 141)
+TextLabel.Visible = false
+TextLabel.Font = Enum.Font.Nunito
+TextLabel.Text = "T"
+TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+f2:TweenPosition(f1.Position, "Out", "Quart",0.4)
+f3:TweenPosition(f1.Position, "Out", "Quart",0.4)
+f4:TweenPosition(f1.Position, "Out", "Quart",0.4)
+f5:TweenPosition(f1.Position, "Out", "Quart",0.4)
+wait(0.6)
+f2:Destroy()
+f3:Destroy()
+f4:Destroy()
+f5:Destroy()
+f1.Visible = true
+TextLabel.Size = f1.Size
+TextLabel.Position = f1.Position
+TextLabel.TextTransparency = 1
+TextLabel.Visible = true
+function apper(v)
+    if v == true then
+        repeat
+            wait()
+            TextLabel.TextTransparency = TextLabel.TextTransparency-0.09
+        until TextLabel.TextTransparency <0
+    elseif v == false then
+        wait()
+    end
+end
+function End(v)
+    if v == "end" or v == "End" then
+        ScreenGui:Destroy()
+    end
+end
+apper(true)
+wait(1.2)
+repeat
+    wait()
+    TextLabel.TextTransparency = TextLabel.TextTransparency+0.09
+until TextLabel.TextTransparency >1
+f1:TweenPosition(UDim2.new(0.5, 0, 5, 0), "Out", "Quart", 0.9)
+wait(1.9629929131763)
+End("End")
+wait()
+return
