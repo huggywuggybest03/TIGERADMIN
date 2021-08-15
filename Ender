@@ -18,7 +18,7 @@ game["Run Service"].RenderStepped:connect(function()
 end)
 
 getgenv().Nullware_ReanimateConfiguration = {
-	["Netless"] = true,
+	["Netless"] = false,
 	["Anti-Fling"] = false,
 	["Hats To Align"] = {},
 	["Head Movement"] = false,
