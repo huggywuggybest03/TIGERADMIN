@@ -16,9 +16,9 @@ game["Run Service"].RenderStepped:connect(function()
 	settings().Physics.AllowSleep = false
 	setsimulationradius(9e9*9e9,9e9*9e9)
 end)
-
+AttackPart = "notting"
 getgenv().Nullware_ReanimateConfiguration = {
-	["Netless"] = false,
+	["Netless"] = true,
 	["Anti-Fling"] = false,
 	["Hats To Align"] = {},
 	["Head Movement"] = false,
@@ -67,11 +67,27 @@ spawn(function()
 		if clickedm == true and dead == false then
 			if cool == false then
 				cool = true
-				for i,v in pairs(game.Players:GetPlayers()) do
-					if v then
-						meleeRemote:FireServer(v)
-						meleeRemote:FireServer(v)
+				if AttackPart == "end" then
+					for i,v in pairs(game.Players:GetPlayers()) do
+						if v then
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+						end
 					end
+				elseif AttackPart == "notting" then
+					for i,v in pairs(game.Players:GetPlayers()) do
+						if v then
+							meleeRemote:FireServer(v)
+							meleeRemote:FireServer(v)
+						end
+					end
+				
 				end
 				wait(0.2)
 				cool = false
@@ -1493,6 +1509,7 @@ mouse.Button1Down:connect(function(key)
 					hum.CameraOffset = Vector3.new(0,0,0)
 				end
 			end))
+			AttackPart = "end"
 			for i = 1,4.7,0.1 do
 				rootj.C0 = clerp(rootj.C0, RootCF * CF(0, 0, -1.4 + 0.1 * Cos(sine / 20)) * angles(Rad(45), Rad(0), Rad(0)), 0.15)
 				tors.Neck.C0 = clerp(tors.Neck.C0, necko * angles(Rad(35), Rad(0), Rad(0)), 0.3)
@@ -1503,6 +1520,7 @@ mouse.Button1Down:connect(function(key)
 			end
 			wait(.6)
 			combo = 1
+			AttackPart = "notting"
 		end
 		hum.WalkSpeed = 16
 		wait2 = false
