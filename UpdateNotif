@@ -9,5 +9,5 @@ if v.Value ~= NewestVersion then
 		Duration = "9999999";
 		Button1 = "Okay"
 	})
-	return
+	return NewestVersion
 end
