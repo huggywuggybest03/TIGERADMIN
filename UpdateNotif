@@ -1,13 +1,13 @@
 --//Tiger Admin Update notif
-NewestVersion = 3.5
+_G.NewestVersion = 3.5
 local v = game["Tiger_Loaded"]["Version"]
-if v.Value ~= NewestVersion then
+if v.Value ~= _G.NewestVersion then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "Tiger admin";
-		Text = "Your tiger admin is outdated! newest: "..NewestVersion.." Yours: "..v.Value;
+		Text = "Your tiger admin is outdated! newest: ".._G.NewestVersion.." Yours: "..v.Value;
 		Icon = "";
 		Duration = "9999999";
 		Button1 = "Okay"
 	})
 end
-return NewestVersion
+return _G.NewestVersion
