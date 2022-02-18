@@ -1,4 +1,7 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -6,7 +9,6 @@ local UICorner = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
-local TextLabel_4 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
@@ -19,8 +21,8 @@ Main.Name = "Main"
 Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Main.BackgroundTransparency = 0.200
-Main.Position = UDim2.new(0.315968275, 0, 0.342237085, 0)
-Main.Size = UDim2.new(0.36806342, 0, 0.315525889, 0)
+Main.Position = UDim2.new(0.315968275, 0, 0.303338915, 0)
+Main.Size = UDim2.new(0.373725921, 0, 0.313856453, 0)
 
 UICorner.CornerRadius = UDim.new(0, 3)
 UICorner.Parent = Main
@@ -28,8 +30,8 @@ UICorner.Parent = Main
 TextLabel.Parent = Main
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0492307618, 0, 0, 0)
-TextLabel.Size = UDim2.new(0.615384638, 0, 0.126984119, 0)
+TextLabel.Position = UDim2.new(0.049230773, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.721509695, 0, 0.126984119, 0)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "T"
 TextLabel.TextColor3 = Color3.fromRGB(255, 0, 4)
@@ -54,34 +56,20 @@ TextLabel_2.TextWrapped = true
 TextLabel_3.Parent = Main
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.190769225, 0, 0.238095239, 0)
-TextLabel_3.Size = UDim2.new(0.615384638, 0, 0.518518448, 0)
+TextLabel_3.Position = UDim2.new(0.190769181, 0, 0.238095224, 0)
+TextLabel_3.Size = UDim2.new(0.643076956, 0, 0.518518448, 0)
 TextLabel_3.Font = Enum.Font.Nunito
-TextLabel_3.Text = "Some commands are outdated and might not work, im currently rescripting    iger admin."
+TextLabel_3.Text = "Some commands are outdated and might not work, im currently rescripting Tiger admin."
 TextLabel_3.TextColor3 = Color3.fromRGB(208, 208, 208)
 TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 
-TextLabel_4.Parent = Main
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.Position = UDim2.new(0.393846154, 0, 0.613756597, 0)
-TextLabel_4.Size = UDim2.new(0.212307692, 0, 0.142857134, 0)
-TextLabel_4.Font = Enum.Font.Nunito
-TextLabel_4.Text = "T"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 0, 0)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextStrokeColor3 = Color3.fromRGB(249, 0, 0)
-TextLabel_4.TextStrokeTransparency = 0.770
-TextLabel_4.TextWrapped = true
-
 TextButton.Parent = Main
 TextButton.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
 TextButton.BackgroundTransparency = 0.100
-TextButton.Position = UDim2.new(0.190769225, 0, 0.793650746, 0)
-TextButton.Size = UDim2.new(0.615384638, 0, 0.169312149, 0)
+TextButton.Position = UDim2.new(0.190769181, 0, 0.793650746, 0)
+TextButton.Size = UDim2.new(0.643076956, 0, 0.169312149, 0)
 TextButton.Font = Enum.Font.Nunito
 TextButton.Text = "I understand."
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -90,13 +78,14 @@ TextButton.TextWrapped = true
 
 UICorner_2.CornerRadius = UDim.new(0, 4)
 UICorner_2.Parent = TextButton
+
 e = false
 TextButton.MouseButton1Click:Connect(function()
 	if e == false then
 		e = true
-		Main:TweenPosition(UDim2.new(0.316, 0,-3, 0),"Quart","Out",0.5)
+		Main:TweenPosition(UDim2.new(0.316, 0,-3, 0),"In","Back",2)
 		wait(1.4)
 		ScreenGui:Destroy()
 	end
-	
+
 end)
