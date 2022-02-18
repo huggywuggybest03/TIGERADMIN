@@ -1,5 +1,5 @@
 --//Tiger Admin Update notif
-_G.NewestVersion = 3.7
+_G.NewestVersion = 4.0
 local v = game["Tiger_Loaded"]["Version"]
 if v.Value ~= _G.NewestVersion then
 	game.StarterGui:SetCore("SendNotification", {
