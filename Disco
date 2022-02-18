@@ -1,1 +1,452 @@
-local a=game.Players.LocalPlayer.Name;function CreateBeam3(b,c,d)if b then pcall(function()local e=game.Players.LocalPlayer.Backpack;local f=game.Players.LocalPlayer.Character;local g=e:FindFirstChild("M9")or f:FindFirstChild("M9")if not g then workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)end;g=e:FindFirstChild("M9")or f:FindFirstChild("M9")local h=b.Character.Head;if h and b and f and e and g and c and d then game.ReplicatedStorage.ShootEvent:FireServer({{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h},{["RayObject"]=Ray.new(Vector3.new(1,1,1),Vector3.new(1,1,1)),["Distance"]=c,["Cframe"]=d,["Hit"]=h}},g)end end)end end;function Beam(b,c,i)if b and c then local j=game:GetService("RunService")j:BindToRenderStep(b.Name,math.huge,function()coroutine.wrap(function()CreateBeam3(b,c,b.Character.HumanoidRootPart.CFrame)end)()end)delay(i,function()pcall(function()j:UnbindFromRenderStep(b.Name)end)end)end end;game:GetService("RunService").Heartbeat:Connect(function()Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)end)game:GetService("RunService").RenderStepped:Connect(function()Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)Beam(game.Players[a],math.huge,9999999999999)end)
+local a = game.Players.LocalPlayer.Name
+local lastp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local newp = CFrame.new(816.24053955078, 97.999946594238, 2461.1025390625)
+function CreateBeam3(b, c, d)
+	if b then
+		pcall(
+			function()
+				local e = game.Players.LocalPlayer.Backpack
+				local f = game.Players.LocalPlayer.Character
+				local g = e:FindFirstChild("M9") or f:FindFirstChild("M9")
+				if not g then
+					workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+				end
+				g = e:FindFirstChild("M9") or f:FindFirstChild("M9")
+				local h = b.Character.Head
+				if h and b and f and e and g and c and d then
+					game.ReplicatedStorage.ShootEvent:FireServer(
+						{
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							},
+							{
+								["RayObject"] = Ray.new(Vector3.new(1, 1, 1), Vector3.new(1, 1, 1)),
+								["Distance"] = c,
+								["Cframe"] = d,
+								["Hit"] = h
+							}
+						},
+						g
+					)
+				end
+			end
+		)
+	end
+end
+function Beam(b, c, i)
+	if b and c then
+		local j = game:GetService("RunService")
+		j:BindToRenderStep(
+			b.Name,
+			math.huge,
+			function()
+				coroutine.wrap(
+					function()
+						CreateBeam3(b, c, b.Character.HumanoidRootPart.CFrame)
+					end
+				)()
+			end
+		)
+		delay(
+			i,
+			function()
+				pcall(
+					function()
+						j:UnbindFromRenderStep(b.Name)
+					end
+				)
+			end
+		)
+	end
+end
+local rs = game:GetService("RunService")
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+	
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
+rs.Heartbeat:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastp
+
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	Beam(game.Players[a], 9999999999, 9999999999999)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newp
+end)
