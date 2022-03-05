@@ -1,0 +1,48 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local ctcdsl = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ctcdsl.Name = "ctcdsl"
+ctcdsl.Parent = ScreenGui
+ctcdsl.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ctcdsl.BackgroundTransparency = 1.000
+ctcdsl.Position = UDim2.new(0.84563756, 0, 0.91974318, 0)
+ctcdsl.Size = UDim2.new(0, 200, 0, 50)
+ctcdsl.Font = Enum.Font.SourceSans
+ctcdsl.Text = "Click to copy discord invite!"
+ctcdsl.TextColor3 = Color3.fromRGB(255, 255, 255)
+ctcdsl.TextSize = 14.000
+ctcdsl.TextStrokeColor3 = Color3.fromRGB(255, 0, 4)
+ctcdsl.TextStrokeTransparency = 0.720
+
+TextButton.Parent = ScreenGui
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0.84563756, 0, 0.906902075, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 58)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+local cd = false
+local invite = "\104\116\116\112\115\58\47\47\100\105\115\99\111\114\100\46\103\103\47\122\106\53\120\82\112\51\90\75\110\10\10"
+TextButton.MouseButton1Click:Connect(function()
+	if cd == false then
+		cd = true
+		ctcdsl.Text = "Copyed!"
+		setclipboard(invite)
+		wait(1.2)
+		ctcdsl.Text = "Click to copy discord invite!"
+		cd = false
+	end
+end)
