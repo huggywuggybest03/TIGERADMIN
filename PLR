@@ -1,1 +1,2 @@
 local playertar = workspace:FindFirstChild("ADMINPLAYERTHIS").Value
+print(playertar)
