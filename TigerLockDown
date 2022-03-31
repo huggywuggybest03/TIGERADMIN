@@ -1,4 +1,4 @@
-_G.g = true
+_G.g = false
 wait(.1)
 if _G.g == true then
 game.Players.LocalPlayer:Kick("Tiger admin is in lockdown.")
